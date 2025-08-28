@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title or (resume.name ~ " – Resume") }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+  <!-- Your shared site styles (mesh background, glass utilities, etc.) -->
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+
+  <style>
+    /* Page-level safety */
+    :root { color-scheme: dark; }
+    html, body { overflow-x: hidden; }
+
+    /* AOS fallback: if AOS fails to init, show content instead of staying hidden */
+    [data-aos] { will-change: opacity, transform; }
+    html.aos-disabled [data-aos] { opacity: 1 !important; transform: none !important; }
+
+    /* Local accents (kept lightweight) */
+    .gradient-text{
+      background: linear-gradient(135deg,#22d3ee 0%, #10b981 50%, #60a5fa 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .glass{
+      background: rgba(15, 23, 42, .55);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, .15);
+      box-shadow: 0 10px 28px rgba(0,0,0,.18);
+    }
+    .hover-ring-emerald:hover{
+      box-shadow: 0 0 0 1px rgba(16,185,129,.25), 0 10px 30px rgba(16,185,129,.12);
+      border-color: rgba(16,185,129,.35);
+    }
+
+    /* Decorative background blobs (very light; won’t cause scrollbars) */
+    .blob{
+      position: fixed; pointer-events: none; filter: blur(60px);
+      opacity: .32; z-index: 0;
+      background: radial-gradient(600px 600px at center, rgba(34,211,238,.55), transparent 70%);
+      animation: blob-float 14s ease-in-out infinite;
+      transform: translateZ(0);
+    }
+    .blob--tl{ top: -120px; left: -140px; width: 520px; height: 520px; }
+    .blob--br{ bottom: -160px; right: -160px; width: 560px; height: 560px;
+               background: radial-gradient(620px 620px at center, rgba(16,185,129,.55), transparent 70%);
+               animation-delay: -6s; }
+    @keyframes blob-float{ 0%,100%{ transform: translateY(0) } 50%{ transform: translateY(-16px) } }
+
+    /* Timeline (valid structure using ::before) */
+    .timeline{ position: relative; padding-left: 1rem; }
+    .timeline::before{
+      content: ""; position: absolute; left: .5rem; top: 0; bottom: 0;
+      width: 2px; background: linear-gradient(to bottom, #14b8a6, rgba(16,185,129,.75));
+      opacity: .9;
+    }
+    @media (min-width: 640px){
+      .timeline{ padding-left: 1.5rem; }
+      .timeline::before{ left: .75rem; }
+    }
+    .timeline-item{ position: relative; margin-bottom: 1.25rem; }
+    .timeline-item::before{
+      content: ""; position: absolute; left: .5rem; top: .6rem; transform: translateX(-50%);
+      width: .6rem; height: .6rem; border-radius: 9999px; background: #10b981;
+      box-shadow: 0 0 0 2px rgba(16,185,129,.3);
+    }
+    @media (min-width: 640px){
+      .timeline-item::before{ left: .75rem; }
+    }
+
+    /* Print tweaks */
+    @media print{
+      .blob{ display: none !important; }
+      a[href^="http"]::after{ content:" (" attr(href) ")"; font-size: .9em; color: #9ca3af; }
+      .glass{ box-shadow: none !important; background: #0b1220 !important; }
+      body{ background: #0b1220 !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-200 antialiased break-words [text-wrap:pretty] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] selection:bg-emerald-500/20 selection:text-emerald-100">
+
+  <!-- Decorative background (behind everything) -->
+  <div class="blob blob--tl" aria-hidden="true"></div>
+  <div class="blob blob--br" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="relative max-w-6xl mx-auto px-4 pt-8 sm:pt-10 z-[1]">
+    <div class="glass rounded-2xl px-5 md:px-6 py-6 md:py-7">
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight gradient-text" data-aos="fade-up">
+        {{ resume.name }}
+      </h1>
+      <p class="mt-2 text-slate-400 text-base sm:text-lg" data-aos="fade-up" data-aos-delay="80">
+        {{ resume.title }}
+      </p>
+      <div class="mt-4 sm:mt-6" data-aos="fade-up" data-aos-delay="120">
+        <a href="{{ url_for('static', path='Dhruvit-Resume.pdf') }}" download
+           class="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 md:px-5 py-2.5 text-sm font-medium text-slate-900 hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-slate-950 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"/>
+          </svg>
+          Download Resume (PDF)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="relative max-w-6xl mx-auto px-4 pb-20 space-y-8 sm:space-y-10 z-[1]">
+
+    <!-- SUMMARY -->
+    <section class="glass rounded-2xl p-5 md:p-6" data-aos="fade-up">
+      <h2 class="text-lg font-semibold text-slate-100 flex items-center gap-2">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        Summary
+      </h2>
+      <div class="mt-3 sm:mt-4 space-y-4 leading-7 text-slate-300">
+        {% for para in (resume.summary or "").split("\n\n") if para.strip() %}
+          <p>{{ para }}</p>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="glass rounded-2xl p-5 md:p-6" data-aos="fade-up" data-aos-delay="60">
+      <h2 class="text-lg font-semibold text-slate-100 flex items-center gap-2">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+        Skills
+      </h2>
+      <ul class="mt-3 sm:mt-4 flex flex-wrap gap-2">
+        {% for s in resume.skills or [] %}
+          <li class="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-sm text-emerald-200 hover-ring-emerald transition">
+            {{ s }}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="glass rounded-2xl p-5 md:p-6" data-aos="fade-up" data-aos-delay="80">
+      <h2 class="text-lg font-semibold text-slate-100 flex items-center gap-2">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+        Experience
+      </h2>
+
+      <!-- Valid, accessible timeline -->
+      <ol class="timeline mt-4">
+        {% for e in resume.experience or [] %}
+          <li class="timeline-item">
+            <div class="ml-5 sm:ml-6 rounded-xl border border-slate-800/70 bg-slate-900/50 p-4 md:p-5 hover-ring-emerald transition">
+              <div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                <span class="text-slate-100 font-semibold">{{ e.role }}</span>
+                <span class="text-slate-400">• {{ e.company }}</span>
+                {% if e.duration %}
+                  <span class="sm:ml-auto text-sm text-slate-500 w-full sm:w-auto mt-1 sm:mt-0">{{ e.duration }}</span>
+                {% endif %}
+              </div>
+              {% if e.highlights %}
+                <ul class="mt-3 list-disc pl-5 space-y-1.5 text-slate-300">
+                  {% for h in e.highlights %}
+                    <li>{{ h }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="glass rounded-2xl p-5 md:p-6" data-aos="fade-up" data-aos-delay="100">
+      <h2 class="text-lg font-semibold text-slate-100 flex items-center gap-2">
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-pink-400"></span>
+        Education
+      </h2>
+
+      <ul class="mt-4 grid gap-4 grid-cols-1 sm:grid-cols-2">
+        {% for ed in resume.education or [] %}
+          <li class="rounded-2xl border border-slate-800/70 bg-slate-900/50 p-4 md:p-5 hover-ring-emerald transition" data-aos="zoom-in" data-aos-delay="{{ loop.index * 80 }}">
+            <div class="flex flex-wrap items-baseline gap-2">
+              <span class="text-slate-100 font-semibold">{{ ed.degree }}</span>
+              <span class="text-slate-400">• {{ ed.institution }}</span>
+              {% if ed.year %}
+                <span class="sm:ml-auto text-sm text-slate-500 w-full sm:w-auto mt-1 sm:mt-0">{{ ed.year }}</span>
+              {% endif %}
+            </div>
+            {% if ed.status %}
+              <p class="mt-2 text-slate-400 text-sm">{{ ed.status }}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="glass rounded-2xl p-5 md:p-6" data-aos="fade-up" data-aos-delay="120">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-semibold text-slate-100 flex items-center gap-2">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+          Projects
+        </h2>
+      </div>
+
+      <ul class="mt-4 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {% for p in resume.projects or [] %}
+          <li class="group rounded-2xl border border-slate-800/70 bg-slate-900/50 p-4 md:p-5 transition hover-ring-emerald hover:-translate-y-0.5" data-aos="fade-up" data-aos-delay="{{ loop.index * 60 }}">
+            <h3 class="text-slate-100 font-semibold">{{ p.title }}</h3>
+            {% if p.description %}
+              <p class="mt-2 text-slate-300 text-sm leading-6">{{ p.description }}</p>
+            {% endif %}
+            {% if p.link %}
+              <a href="{{ p.link }}" target="_blank" rel="noopener noreferrer"
+                 class="mt-3 inline-flex items-center gap-2 text-sm text-emerald-400 hover:text-emerald-300 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 14L21 3m0 0h-7m7 0v7"/>
+                </svg>
+                View Project
+              </a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </main>
+
+  <!-- AOS init -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Run AOS after full load so it correctly measures positions
+    window.addEventListener('load', () => {
+      if (window.AOS) {
+        AOS.init({
+          duration: 650,
+          once: true,
+          offset: 40,           // smaller offset so items trigger earlier
+          easing: 'ease-out-cubic',
+          startEvent: 'load'    // ensure init after load
+        });
+        // Make sure positions are recalculated
+        setTimeout(() => AOS.refreshHard(), 200);
+      }
+    });
+
+    // Fallback: if AOS didn't add any classes shortly after load, show content
+    setTimeout(() => {
+      const anyAOS = document.querySelector('.aos-init, .aos-animate');
+      if (!anyAOS) document.documentElement.classList.add('aos-disabled');
+    }, 900);
+  </script>
+</body>
+</html>

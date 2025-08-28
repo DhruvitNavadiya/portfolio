@@ -1,0 +1,170 @@
+# 📚 Knowledge Base (Enhanced for Portfolio RAG Chatbot)
+
+## 📞 Contact  
+
+* **Email:** navadiyadhruvit@gmail.com  
+* **Phone:** +91-9099645594  
+* **age:** 21 Years
+* **LinkedIn:** [linkedin.com/in/dhruvit-navadiya](#)  
+* **GitHub:** [github.com/dhruvitnavadiya](#)  
+* **Portfolio Website:** [dhruvitnavadiya.vercel.app](#)  
+
+---
+
+## 👤 About Me  
+
+* **Name:** Dhruvit Navadiya  
+* **Identity/Title:** *FastAPI & AI Application Builder | Machine Learning and Data Science Enthusiast*  
+* **Education:**  
+  * **B.Tech in Computer Science & Engineering (IoT specialization), GH Patel College of Engineering & Technology – Graduated May 2025**  
+    * **CGPA:** 8.83 / 10  
+  * **SSC (10th):** Mauni International School – *Scored 92%*  
+  * **HSC (12th):** Mauni International School – *Scored 93%*  
+* **Career Goal:** Build impactful **AI applications and ML solutions** for real-world problems, with a long-term vision to start a **data analytics service**  
+
+---
+
+## 🌟 Personal Traits  
+
+* **Curious Learner** – always eager to explore new AI tools, frameworks, and technologies  
+* **Problem-Solver** – enjoys breaking down complex challenges into structured solutions  
+* **Creative Builder** – loves making interactive apps, dashboards, and automation tools  
+* **Adaptable & Fast Learner** – comfortable picking up new skills quickly  
+* **Collaborative** – enjoys team projects, brainstorming, and knowledge-sharing  
+* **Detail-Oriented** – careful with data cleaning, accuracy, and presenting insights clearly  
+* **Driven** – motivated to push projects from *idea → prototype → polished app*  
+* **Balanced** – values productivity but also enjoys sports, tech trends, and creative side projects  
+
+---
+
+## 🛠️ Skills  
+
+* **Application Development:** FastAPI (backend APIs), React (frontend), AI-powered app integration  
+* **Programming Languages:** Python, SQL, C, C++, JavaScript, HTML/CSS  
+* **ML Libraries:** Pandas, NumPy, scikit-learn, Matplotlib, Seaborn, BeautifulSoup, LangChain, Hugging Face  
+* **Concepts:** RAG Applications, Supervised & Unsupervised Learning, EDA, Feature Engineering, Statistical Analysis, Data Wrangling, Data Cleaning  
+* **Databases & Data Engineering:** MongoDB (async driver, Pydantic models), SQL queries  
+* **Analytics Tools:** Power BI, Excel (Pivot Tables, Charts, Slicers, Conditional Formatting)  
+* **Tools & Platforms:** Jupyter Notebook, VS Code, Google Colab, Git  
+
+---
+
+## 💼 Experience  
+
+### **Data Analyst – Transform Solutions, Surat (1 Month)**  
+* Worked on **data cleaning, analysis, and visualization**  
+* Built **Excel dashboards** and **Power BI reports** for client datasets  
+* Practical exposure to handling **real-world business data**  
+
+### **Machine Learning & Data Science Intern – Stypix (Ahmedabad, Jan–May 2025)**  
+* Collaborated with the data science team to build **predictive analytics models for healthcare use-cases**  
+* Developed and evaluated a **Diabetes Prediction model** using supervised learning in Python  
+* Applied **data wrangling, outlier detection, and feature engineering** on real-world datasets  
+* Automated end-to-end ML pipeline (preprocessing → model training → evaluation)  
+* Utilized SQL for advanced queries to extract meaningful trends  
+
+### **Rejoicehub (Interview Evaluation)**  
+* Built and deployed an **ML model on GitHub** as part of the company’s evaluation task  
+
+---
+
+## 📊 Projects  
+
+1. **Diabetes Prediction | Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn**  
+   * Used **Pima Indians Diabetes Dataset**  
+   * Preprocessing: missing values, scaling, EDA  
+   * Compared models: Logistic Regression, Random Forest, KNN  
+   * Applied **hyperparameter tuning & cross-validation**  
+   * Visualized performance with ROC, confusion matrix, heatmaps  
+
+2. **Loan Prediction | Python, Pandas, NumPy, Scikit-learn, Matplotlib**  
+   * Predicted loan approval status based on demographic & financial data  
+   * Feature engineering, missing value imputation  
+   * Algorithms: Logistic Regression, Decision Tree, Random Forest  
+   * Evaluated using confusion matrix, classification reports  
+   * Shared business insights with visualizations  
+
+3. **Cricket Analytics Dashboard | Power BI**  
+   * Built real-time dashboards for **player performance & match forecasting**  
+
+4. **Choropleth Map Visualization**  
+   * Geographic data insights  
+
+5. **Sales/Operations Dashboard | Excel**  
+   * Dynamic dashboard for sales/revenue trends  
+   * Used Pivot Tables, Charts, Slicers, Conditional Formatting  
+   * Highlighted KPIs, anomalies, and top performers  
+
+6. **Python Weather App (Personal Project)**  
+   * GUI app with **animations, voice readout, weekly forecasts**  
+
+7. **Portfolio Website + AI Chatbot**  
+   * React frontend with minimalist design  
+   * FastAPI backend + MongoDB  
+   * Integrated **RAG-based chatbot** to answer queries about projects, skills, resume  
+   * Features: upload/view wallpapers, structured resume & project data  
+
+---
+
+## ⭐ Featured Projects  
+
+* **Portfolio Website + RAG Chatbot** → Demonstrates end-to-end **AI + web dev** integration  
+* **Diabetes Prediction Model** → Strong ML fundamentals, healthcare AI focus  
+* **Python Weather App** → Creative, user-focused application with **animation + voice**  
+
+---
+
+## 📨 Applications & Career Milestones (AI/ML & GenAI Roles Only)  
+
+* Applied to:  
+  * **Daydream Soft** – *Data Science role*  
+  * **Instance IT Solutions** – *ML & AI application development*  
+  * **ThinkBiz** – *Data Science & UI/UX hybrid role*  
+  * **Rejoicehub** – *ML evaluation task completed & submitted (GitHub deployment)*  
+
+---
+
+## 🏆 Certifications & Achievements  
+
+* **CGPA 8.83** in B.Tech  
+* **92% (SSC), 93% (HSC)**  
+* **Certifications:**  
+  * Introduction to DevOps  
+  * Data Visualization with Python  
+  * Introduction to SQL  
+  * C++ for C Programmers  
+* Participated in **state-level science fairs**  
+* Built multiple **ML, AI, and analytics projects** across tools and frameworks  
+* Strong teamwork, problem-solving, and application-building mindset  
+
+---
+
+## 🔮 Future Goals & Vision  
+
+* **Short-Term:** Gain hands-on experience in **AI/ML & GenAI** roles, focusing on **LLM applications, RAG pipelines, and deployment**  
+* **Long-Term:** Build a **data-driven analytics & AI service**, helping businesses leverage ML for better decision-making  
+
+---
+
+## 💡 Strengths & Working Style  
+
+* Strong at **end-to-end project ownership** (from idea → model → deployment)  
+* Ability to **communicate insights** to both technical and non-technical stakeholders  
+* Balance of **analytical thinking** and **creative problem-solving**  
+* Comfortable with **fast-paced, dynamic work environments**  
+
+---
+
+## 🎯 Interests & Passions  
+
+* Exploring **Generative AI applications** (LLMs, RAG, LangChain, LLMOps)  
+* **Data visualization & storytelling** through dashboards and apps  
+* Interest in **sports analytics, healthcare AI, and productivity tools**  
+* Following trends in **AI startups, web dev, and automation**  
+
+---
+
+## 📜 Testimonials / Feedback (Optional Placeholder)  
+
+*“Dhruvit is a quick learner, detail-oriented, and always takes ownership of his projects.”* – *Mentor/Colleague feedback*  
+

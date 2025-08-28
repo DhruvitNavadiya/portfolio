@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhruvit Navadiya | FastAPI & AI Application Builder</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Dhruvit Navadiya — FastAPI & AI Application Builder. Portfolio showcasing AI/ML projects, data analytics, and modern web apps." />
+  <meta name="keywords" content="Dhruvit Navadiya, AI, Machine Learning, FastAPI, React, Data Analytics, Power BI, Portfolio" />
+  <meta name="author" content="Dhruvit Navadiya" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dhruvit Navadiya | FastAPI & AI Application Builder" />
+  <meta property="og:description" content="AI/ML projects, RAG apps, and modern web development." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/0f2027/ffffff&text=Dhruvit+Navadiya" />
+
+  <!-- Tailwind & Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bg-gray-950 text-gray-200 overflow-x-hidden antialiased break-words [text-wrap:pretty] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
+
+  <!-- Floating Navigation (desktop) -->
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 px-6 py-3 nav-glass rounded-full shadow-xl hidden md:block">
+    <ul class="flex items-center space-x-8 text-sm font-medium">
+      <li><a href="#home" class="text-gray-300 hover:text-teal-300">Home</a></li>
+      <li><a href="#about" class="text-gray-300 hover:text-teal-300">About</a></li>
+      <li><a href="#skills" class="text-gray-300 hover:text-teal-300">Skills</a></li>
+      <li><a href="#projects" class="text-gray-300 hover:text-teal-300">Projects</a></li>
+      <li><a href="#experience" class="text-gray-300 hover:text-teal-300">Experience</a></li>
+      <li><a href="#contact" class="text-gray-300 hover:text-teal-300">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile Navigation (overlay) -->
+  <nav id="mobile-nav" class="md:hidden fixed top-0 left-0 right-0 z-50 nav-glass">
+    <div class="flex items-center justify-between px-6 py-4">
+      <div class="text-xl font-bold gradient-text">Dhruvit</div>
+      <button id="mobile-menu-btn" type="button" aria-label="Toggle menu" class="text-gray-300 hover:text-teal-300">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+    <div id="mobile-menu">
+      <ul class="py-4 px-6 space-y-2 text-lg">
+        <li><a href="#home" class="block py-3">Home</a></li>
+        <li><a href="#about" class="block py-3">About</a></li>
+        <li><a href="#skills" class="block py-3">Skills</a></li>
+        <li><a href="#projects" class="block py-3">Projects</a></li>
+        <li><a href="#experience" class="block py-3">Experience</a></li>
+        <li><a href="#contact" class="block py-3">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 md:pt-0 section-flow">
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center justify-between">
+        <div class="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+          <div class="mb-6">
+            <span class="px-4 py-2 bg-gray-900/80 border border-gray-800 text-teal-300 rounded-full text-sm font-semibold hero-chip">👋 Hello, I'm</span>
+          </div>
+          <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-4 leading-tight">
+            <span class="block text-white hero-parallax">Dhruvit</span>
+            <span class="block hero-name hero-parallax">Navadiya</span>
+          </h1>
+          <p id="hero-subtitle" class="text-base sm:text-lg md:text-xl text-gray-300 mb-3 hero-parallax">
+            FastAPI & AI Application Builder
+          </p>
+          <p class="text-base md:text-lg text-gray-300/80 mb-8 max-w-lg mx-auto lg:mx-0">
+            Machine Learning enthusiast passionate about building impactful AI applications and data-driven solutions.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="#projects" class="px-7 py-3 bg-gradient-to-r from-teal-500 to-emerald-500 text-gray-900 rounded-xl font-semibold hover:from-teal-600 hover:to-emerald-600 transition inline-flex items-center gap-2 shadow">
+              <i class="fas fa-rocket"></i> View My Work
+            </a>
+            <a href="#contact" class="px-7 py-3 border-2 border-gray-600 text-gray-200 rounded-xl font-semibold hover:border-teal-400 hover:text-teal-300 transition inline-flex items-center gap-2">
+              <i class="fas fa-envelope"></i> Get in Touch
+            </a>
+            <a href="/resume" class="px-7 py-3 border-2 border-teal-500 text-teal-300 rounded-xl font-semibold hover:bg-teal-600 hover:text-gray-900 transition inline-flex items-center gap-2">
+              <i class="fas fa-file-arrow-down"></i> Resume
+            </a>
+          </div>
+          <div class="flex gap-4 mt-8 justify-center lg:justify-start">
+            <a href="mailto:navadiyadhruvit@gmail.com" class="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:text-teal-300"><i class="fas fa-envelope"></i></a>
+            <a href="#" aria-label="LinkedIn" class="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:text-teal-300"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/DhruvitNavadiya" aria-label="GitHub" target="_blank" rel="noopener noreferrer" class="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:text-teal-300"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="lg:w-1/2 flex justify-center">
+          <div class="relative hero-parallax">
+            <div class="w-60 h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-br from-gray-800 to-gray-700 rounded-full p-1 shadow-2xl hero-avatar">
+              <div class="w-full h-full rounded-full overflow-hidden">
+                <img src="/static/dhruvit.jpg" alt="Dhruvit Navadiya" class="w-full h-full object-cover object-[40%_50%]">
+              </div>
+            </div>
+          
+            <div class="absolute -top-3 -right-3 w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center shadow hero-chip" style="animation-delay:0s">
+              <i class="fas fa-brain text-white"></i>
+            </div>
+            <div class="absolute -bottom-3 -left-3 w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center shadow hero-chip" style="animation-delay:0.6s">
+              <i class="fas fa-code text-white"></i>
+            </div>
+            <div class="absolute top-1/2 -left-6 w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center shadow hero-chip" style="animation-delay:1.2s">
+              <i class="fas fa-chart-line text-white text-sm"></i>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 section-flow">
+    <div class="container mx-auto px-6">
+      <div class="max-w-4xl mx-auto text-center fade-in-up">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 gradient-text">About Me</h2>
+        <p class="text-xl text-gray-300/90 mb-12">Turning data into insights, ideas into reality</p>
+        <div class="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
+          <div class="p-6 glass-card rounded-2xl">
+            <div class="w-14 h-14 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-graduation-cap text-teal-400"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-100">Education</h3>
+            <p class="text-gray-400">B.Tech in CSE (IoT)<br/>CGPA: 8.83/10</p>
+          </div>
+          <div class="p-6 glass-card rounded-2xl">
+            <div class="w-14 h-14 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-birthday-cake text-cyan-400"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-100">Age</h3>
+            <p class="text-gray-400">21 Years<br/>Born in 2004</p>
+          </div>
+          <div class="p-6 glass-card rounded-2xl">
+            <div class="w-14 h-14 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-map-marker-alt text-emerald-400"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-100">Location</h3>
+            <p class="text-gray-400">Surat, Gujarat<br/>India</p>
+          </div>
+        </div>
+        <div class="p-8 rounded-3xl text-gray-300 glass-card">
+          I'm a passionate <strong class="text-teal-400">AI & ML enthusiast</strong> with hands-on experience in intelligent apps. Strong fundamentals in machine learning, data science, and full-stack development.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-20 section-flow">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 gradient-text">Skills & Expertise</h2>
+        <p class="text-xl text-gray-300/90">Technologies and tools I work with</p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div class="glass-card p-8 rounded-3xl fade-in-up">
+          <div class="flex items-center mb-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center mr-4">
+              <i class="fas fa-robot text-gray-900 text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-100">AI & Machine Learning</h3>
+              <p class="text-gray-400">Building intelligent systems</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-badge">Python</span><span class="tech-badge">Pandas</span><span class="tech-badge">NumPy</span>
+            <span class="tech-badge">Scikit-learn</span><span class="tech-badge">LangChain</span><span class="tech-badge">RAG Apps</span><span class="tech-badge">Hugging Face</span>
+          </div>
+        </div>
+        <div class="glass-card p-8 rounded-3xl fade-in-up" style="transition-delay:.05s">
+          <div class="flex items-center mb-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-cyan-500 to-sky-500 rounded-2xl flex items-center justify-center mr-4">
+              <i class="fas fa-code text-gray-900 text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-100">Web Development</h3>
+              <p class="text-gray-400">Full-stack applications</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-badge">FastAPI</span><span class="tech-badge">React</span><span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">MongoDB</span><span class="tech-badge">SQL</span><span class="tech-badge">HTML/CSS</span>
+          </div>
+        </div>
+        <div class="glass-card p-8 rounded-3xl fade-in-up" style="transition-delay:.1s">
+          <div class="flex items-center mb-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mr-4">
+              <i class="fas fa-chart-bar text-gray-900 text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-100">Data Analytics</h3>
+              <p class="text-gray-400">Insights from data</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-badge">Power BI</span><span class="tech-badge">Excel</span><span class="tech-badge">Matplotlib</span>
+            <span class="tech-badge">Seaborn</span><span class="tech-badge">Statistics</span><span class="tech-badge">Visualization</span>
+          </div>
+        </div>
+        <div class="glass-card p-8 rounded-3xl fade-in-up" style="transition-delay:.15s">
+          <div class="flex items-center mb-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center mr-4">
+              <i class="fas fa-tools text-gray-900 text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-100">Tools & Platforms</h3>
+              <p class="text-gray-400">Development ecosystem</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-badge">Jupyter</span><span class="tech-badge">VS Code</span><span class="tech-badge">Git</span>
+            <span class="tech-badge">Google Colab</span><span class="tech-badge">BeautifulSoup</span><span class="tech-badge">C/C++</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 section-flow">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 gradient-text">Featured Projects</h2>
+        <p class="text-xl text-gray-300/90">Real-world applications showcasing my expertise</p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <article class="rounded-3xl overflow-hidden glass-card shadow fade-in-up">
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center">
+                <i class="fas fa-robot text-gray-900"></i>
+              </div>
+              <a href="https://github.com/DhruvitNavadiya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-teal-300"><i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-gray-100">Portfolio + RAG Chatbot</h3>
+            <p class="text-gray-400 mb-6">Full-stack site with an integrated AI chatbot (RAG) that answers questions about my work.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-badge">React</span><span class="tech-badge">FastAPI</span><span class="tech-badge">LangChain</span>
+            </div>
+          </div>
+        </article>
+        <article class="rounded-3xl overflow-hidden glass-card shadow fade-in-up" style="transition-delay:.05s">
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center">
+                <i class="fas fa-heart-pulse text-gray-900"></i>
+              </div>
+              <a href="https://github.com/DhruvitNavadiya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-emerald-300"><i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-gray-100">Diabetes Prediction Model</h3>
+            <p class="text-gray-400 mb-6">Healthcare model (Pima dataset) with preprocessing, model comparison and reproducible pipeline.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-badge">Python</span><span class="tech-badge">scikit-learn</span><span class="tech-badge">Pandas</span>
+            </div>
+          </div>
+        </article>
+        <article class="rounded-3xl overflow-hidden glass-card shadow fade-in-up" style="transition-delay:.1s">
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-sky-500 to-cyan-500 rounded-2xl flex items-center justify-center">
+                <i class="fas fa-cloud-sun text-gray-900"></i>
+              </div>
+              <a href="https://github.com/DhruvitNavadiya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-sky-300"><i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-gray-100">Python Weather App</h3>
+            <p class="text-gray-400 mb-6">Interactive app with animations, voice readout, and 7-day forecast.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-badge">Python</span><span class="tech-badge">GUI</span><span class="tech-badge">APIs</span>
+            </div>
+          </div>
+        </article>
+        <article class="rounded-3xl overflow-hidden glass-card shadow fade-in-up" style="transition-delay:.15s">
+          <div class="p-8">
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center">
+                <i class="fas fa-chart-line text-gray-900"></i>
+              </div>
+              <a href="https://github.com/DhruvitNavadiya" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-amber-300"><i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 text-gray-100">Cricket Analytics Dashboard</h3>
+            <p class="text-gray-400 mb-6">Real-time performance tracking and forecasting with interactive visuals.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-badge">Power BI</span><span class="tech-badge">Excel</span><span class="tech-badge">Analytics</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="text-center mt-12">
+        <a href="https://github.com/DhruvitNavadiya" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-gray-900 rounded-xl font-semibold hover:from-teal-600 hover:to-emerald-600 shadow">
+          <i class="fas fa-folder-open mr-2"></i> View All Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-20 section-flow">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 gradient-text">Professional Experience</h2>
+        <p class="text-xl text-gray-300/90">My journey in AI, ML, and data science</p>
+      </div>
+      <div class="max-w-4xl mx-auto">
+        <div class="relative">
+          <div class="timeline-line absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-teal-500 to-emerald-500"></div>
+
+          <div class="relative flex items-start mb-12 fade-in-up">
+            <div class="timeline-dot absolute left-6 w-4 h-4 bg-teal-500 rounded-full border-4 border-gray-950 shadow"></div>
+            <div class="timeline-card ml-0 bg-gray-900 rounded-3xl p-8 border border-gray-800 w-full glass-card">
+              <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                <div>
+                  <h3 class="text-2xl font-bold mb-1 text-gray-100">ML & Data Science Intern</h3>
+                  <p class="text-lg text-teal-300 font-semibold">Stypix, Ahmedabad</p>
+                </div>
+                <span class="text-gray-400 bg-gray-800/70 px-4 py-2 rounded-full text-sm mt-2 lg:mt-0">Jan 2025 – May 2025</span>
+              </div>
+              <ul class="space-y-2 text-gray-300/90">
+                <li class="flex"><i class="fas fa-arrow-right text-teal-400 mt-1.5 mr-3 text-sm"></i> Built <strong>predictive healthcare models</strong>.</li>
+                <li class="flex"><i class="fas fa-arrow-right text-teal-400 mt-1.5 mr-3 text-sm"></i> Developed and evaluated a <strong>diabetes prediction</strong> pipeline.</li>
+                <li class="flex"><i class="fas fa-arrow-right text-teal-400 mt-1.5 mr-3 text-sm"></i> Advanced <strong>data wrangling & feature engineering</strong>.</li>
+                <li class="flex"><i class="fas fa-arrow-right text-teal-400 mt-1.5 mr-3 text-sm"></i> Automated <strong>end-to-end ML pipelines</strong>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="relative flex items-start mb-12 fade-in-up" style="transition-delay:.05s">
+            <div class="timeline-dot absolute left-6 w-4 h-4 bg-emerald-500 rounded-full border-4 border-gray-950 shadow"></div>
+            <div class="timeline-card ml-0 bg-gray-900 rounded-3xl p-8 border border-gray-800 w-full glass-card">
+              <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                <div>
+                  <h3 class="text-2xl font-bold mb-1 text-gray-100">Data Analyst</h3>
+                  <p class="text-lg text-emerald-300 font-semibold">Transform Solutions, Surat</p>
+                </div>
+                <span class="text-gray-400 bg-gray-800/70 px-4 py-2 rounded-full text-sm mt-2 lg:mt-0">1 Month Contract</span>
+              </div>
+              <ul class="space-y-2 text-gray-300/90">
+                <li class="flex"><i class="fas fa-arrow-right text-emerald-400 mt-1.5 mr-3 text-sm"></i> <strong>Data cleaning, analysis, visualization</strong> projects.</li>
+                <li class="flex"><i class="fas fa-arrow-right text-emerald-400 mt-1.5 mr-3 text-sm"></i> Built <strong>Excel dashboards</strong> & <strong>Power BI reports</strong>.</li>
+                <li class="flex"><i class="fas fa-arrow-right text-emerald-400 mt-1.5 mr-3 text-sm"></i> Worked with <strong>real business datasets</strong>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="relative flex items-start fade-in-up" style="transition-delay:.1s">
+            <div class="timeline-dot absolute left-6 w-4 h-4 bg-cyan-500 rounded-full border-4 border-gray-950 shadow"></div>
+            <div class="timeline-card ml-0 bg-gray-900 rounded-3xl p-8 border border-gray-800 w-full glass-card">
+              <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                <div>
+                  <h3 class="text-2xl font-bold mb-1 text-gray-100">B.Tech Computer Science & Engineering</h3>
+                  <p class="text-lg text-cyan-300 font-semibold">G.H. Patel College of Engineering & Technology</p>
+                </div>
+                <span class="text-gray-400 bg-gray-800/70 px-4 py-2 rounded-full text-sm mt-2 lg:mt-0">Aug 2021 – May 2025</span>
+              </div>
+              <ul class="space-y-2 text-gray-300/90">
+                <li class="flex"><i class="fas fa-arrow-right text-cyan-400 mt-1.5 mr-3 text-sm"></i> <strong>CGPA 8.83/10</strong>, IoT specialization.</li>
+                <li class="flex"><i class="fas fa-arrow-right text-cyan-400 mt-1.5 mr-3 text-sm"></i> Focused on <strong>AI, ML, emerging tech</strong>.</li>
+                <li class="flex"><i class="fas fa-arrow-right text-cyan-400 mt-1.5 mr-3 text-sm"></i> Certifications in <strong>DevOps, SQL, Visualization</strong>.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 section-flow">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 fade-in-up">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6 gradient-text">Let's Connect</h2>
+        <p class="text-xl text-gray-300/90">Ready to collaborate on your next AI/ML project</p>
+      </div>
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="mailto:navadiyadhruvit@gmail.com" class="group glass-card p-6 rounded-3xl text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-rose-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+              <i class="fas fa-envelope text-gray-900 text-2xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-100">Email</h3>
+            <p class="text-gray-400 text-sm">navadiyadhruvit@gmail.com</p>
+          </a>
+          <a href="tel:+919099645594" class="group glass-card p-6 rounded-3xl text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+              <i class="fas fa-phone text-gray-900 text-2xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-100">Phone</h3>
+            <p class="text-gray-400 text-sm">+91-9099645594</p>
+          </a>
+          <a href="https://www.linkedin.com/in/dhruvit-navadiya/" target="_blank" rel="noopener noreferrer" class="group glass-card p-6 rounded-3xl text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-sky-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+              <i class="fab fa-linkedin text-gray-900 text-2xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-100">LinkedIn</h3>
+            <p class="text-gray-400 text-sm">Connect with me</p>
+          </a>
+          <a href="https://github.com/DhruvitNavadiya" target="_blank" rel="noopener noreferrer" class="group glass-card p-6 rounded-3xl text-center">
+            <div class="w-16 h-16 bg-gradient-to-br from-slate-400 to-gray-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+              <i class="fab fa-github text-gray-900 text-2xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-100">GitHub</h3>
+            <p class="text-gray-400 text-sm">View my code</p>
+          </a>
+        </div>
+
+        <form id="contact-form" method="post" class="mt-12 glass-card p-6 rounded-2xl">
+          <h3 class="text-2xl font-bold mb-4 text-gray-100">Send a message</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <input required name="name" placeholder="Your name" class="px-4 py-3 rounded-lg border border-gray-700 bg-gray-950 text-gray-200 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20" />
+            <input required type="email" name="email" placeholder="Your email" class="px-4 py-3 rounded-lg border border-gray-700 bg-gray-950 text-gray-200 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20" />
+          </div>
+          <input name="subject" placeholder="Subject" class="mt-4 w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-950 text-gray-200 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20" />
+          <textarea required name="message" placeholder="Your message" rows="5" class="mt-4 w-full px-4 py-3 rounded-lg border border-gray-700 bg-gray-950 text-gray-200 outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"></textarea>
+          <button type="submit" class="mt-4 px-6 py-3 bg-gradient-to-r from-teal-500 to-emerald-500 text-gray-900 rounded-xl font-semibold hover:from-teal-600 hover:to-emerald-600">
+            <i class="fas fa-paper-plane mr-2"></i>Send
+          </button>
+          <p id="contact-status" class="mt-3 text-sm text-gray-400"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-900 text-gray-300 py-12 footer-glass">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-2xl font-bold mb-1 text-gray-100">Dhruvit Navadiya</h3>
+          <p class="text-gray-400">FastAPI & AI Application Builder</p>
+        </div>
+        <div class="flex space-x-5">
+          <a href="mailto:navadiyadhruvit@gmail.com" class="w-11 h-11 glass-card rounded-full flex items-center justify-center hover:text-teal-300"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/dhruvit-navadiya/" class="w-11 h-11 glass-card rounded-full flex items-center justify-center hover:text-teal-300"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/DhruvitNavadiya" class="w-11 h-11 glass-card rounded-full flex items-center justify-center hover:text-teal-300"><i class="fab fa-github"></i></a>
+          <a href="tel:+919099645594" class="w-11 h-11 glass-card rounded-full flex items-center justify-center hover:text-teal-300"><i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+      <div class="border-t border-gray-900 mt-8 pt-8 text-center">
+        <p class="text-gray-500">&copy; <span id="year"></span> Dhruvit Navadiya. Made with <i class="fas fa-heart text-rose-500"></i>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot -->
+  <div class="chatbot-container" aria-live="polite">
+    <div class="chatbot-window" id="chatbot-window" role="dialog" aria-label="AI Assistant chat window">
+      <div class="chatbot-header">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bot-logo rounded-full flex items-center justify-center">
+              <i class="fas fa-bolt text-white"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold">AI Assistant</h3>
+              <p class="text-xs opacity-90">Ask me about Dhruvit's work</p>
+            </div>
+          </div>
+          <button id="close-chatbot" class="text-white/90 hover:text-white" aria-label="Close chat"><i class="fas fa-times text-lg"></i></button>
+        </div>
+      </div>
+      <div class="chatbot-messages" id="chatbot-messages">
+        <div class="message bot">👋 Hi! I'm Dhruvit's AI assistant. Ask me about his projects, skills, and experience.</div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="chatbot-input" placeholder="Ask me anything about Dhruvit..." maxlength="500" aria-label="Message input" />
+        <button id="send-message" class="send-btn" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+    <div class="chatbot-tooltip" id="chatbot-tooltip" role="status"><i class="fas fa-robot mr-2"></i><span class="font-semibold">Dhruvit's personal chatbot</span></div>
+    <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Open chat"><i class="fas fa-robot text-xl bot-toggle-icon"></i></button>
+  </div>
+
+  <!-- Back to top -->
+  <button id="back-to-top" class="back-to-top px-3 py-2 rounded-full bg-gray-900 border border-gray-800 text-gray-300 hover:bg-gray-800">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="/static/script.js" defer></script>
+</body>
+</html>
