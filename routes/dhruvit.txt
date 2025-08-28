@@ -14,6 +14,9 @@
 ## 👤 About Me  
 
 * **Name:** Dhruvit Navadiya  
+* **Father's Name:** Nitinbhai Durlabhjibhai Navadiya
+* **Mother's Name:** Dipaliben Nitinbhai Navadiya
+
 * **Identity/Title:** *FastAPI & AI Application Builder | Machine Learning and Data Science Enthusiast*  
 * **Education:**  
   * **B.Tech in Computer Science & Engineering (IoT specialization), GH Patel College of Engineering & Technology – Graduated May 2025**  
